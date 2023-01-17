@@ -1,10 +1,11 @@
----
 name: Build Pipeline for the Prime Generator Project
-on:
-  - push
+
+on: [ push ]
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    
   steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 11
@@ -14,4 +15,3 @@ jobs:
         distribution: adopt
     - name: Build with Maven
       run: mvn --batch-mode --update-snapshot package
-
